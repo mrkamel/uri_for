@@ -32,7 +32,7 @@ irb> uri_for :path => "/path/to/file
 However, usually, you want to provide the uri via your models:
 
 <pre>
-class SomeModel < ActiveRecord::Base
+class SomeModel &lt; ActiveRecord::Base
   def image_uri
     { :host => APP_CONFIG["image_host"], :path => "/path/to/file" }
   end
@@ -40,7 +40,7 @@ end
 
 # In your views:
 
-uri_for SomeModel.first # => "http://example.org/path/to/file"
+uri_for SomeModel.first.image_uri # => "http://example.org/path/to/file"
 </pre>
 
 UriFor even takes control of whether to use http or https:
