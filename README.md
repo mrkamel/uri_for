@@ -19,8 +19,7 @@ And then execute:
 In your standard or mailer views, controllers and models, simply use:
 
 <pre>
-irb> uri_for :host => "example.org", :path => "/path/to/file"
-=> "http://example.org/path/to/file
+uri_for :host => "example.org", :path => "/path/to/file" # => "http://example.org/path/to/file
 </pre>
 
 Or the short way:
@@ -39,15 +38,15 @@ class SomeModel < ActiveRecord::Base
   end
 end
 
-irb> uri_for SomeModel.first
-=> "http://example.org/path/to/file"
+# In your views:
+
+uri_for SomeModel.first # => "http://example.org/path/to/file"
 </pre>
 
 UriFor even takes control of whether to use http or https:
 
 <pre>
-irb> uri_for :host => "example.org", :port => 443, :path => "/path/to/file"
-=> "https://example.org/path/to/file"
+uri_for :host => "example.org", :port => 443, :path => "/path/to/file" # => "https://example.org/path/to/file"
 </pre>
 
 Again, if you don't provide the port with the hash, UriFor will try to use it from
