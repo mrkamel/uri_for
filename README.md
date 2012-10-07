@@ -46,7 +46,7 @@ uri_for SomeModel.first # => "http://example.org/path/to/file"
 UriFor even takes control of whether to use http or https:
 
 <pre>
-uri_for :host => "example.org", :port => 443, :path => "/path/to/file" # => "https://example.org/path/to/file"
+uri_for :port => 443, :path => "/path/to/file" # => "https://example.org/path/to/file"
 </pre>
 
 Again, if you don't provide the port with the hash, UriFor will try to use it from
