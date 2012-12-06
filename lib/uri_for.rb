@@ -7,10 +7,12 @@ require "uri"
 
 module UriFor
   def uri_for(options = {})
-    if options[:port] == 443
-      URI::HTTPS.build(options).to_s
+    ops = (options || {}).dup
+
+    if ops[:port] == 443
+      URI::HTTPS.build(ops).to_s
     else
-      URI::HTTP.build(options).to_s
+      URI::HTTP.build(ops).to_s
     end
   end
 end
