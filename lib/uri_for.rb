@@ -25,7 +25,7 @@ module ActionView
       alias_method :default_uri_for, :uri_for
 
       def uri_for(options = {}) 
-        @controller.uri_for options
+        controller.uri_for options
       rescue
         default_uri_for options
       end 
